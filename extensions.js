@@ -15,8 +15,13 @@
         success: function( myresults ) {
           console.log(myresults);
 
-          ext.resultscache[location] = myresults;
-          callback(myresults.length);
+          var filtered = myresults.filter(function (obj) {
+              return obj.score >= 0.55 &&
+                     obj.name.indexOf(' color') === -1;
+          });
+
+          ext.resultscache[location] = filtered;
+          callback(filtered.length);
         },
         error: function (err) {
           console.log(err);
