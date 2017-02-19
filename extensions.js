@@ -16,7 +16,7 @@
           console.log(myresults);
 
           var filtered = myresults.filter(function (obj) {
-              return obj.score >= 0.55 &&
+              return obj.score >= 0.59 &&
                      obj.name.indexOf(' color') === -1;
           });
 
